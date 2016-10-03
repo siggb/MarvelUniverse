@@ -5,6 +5,9 @@
 
 Pure Swift iOS application for seekers of Marvel Universe.
 
+<img src="https://raw.githubusercontent.com/siggb/MarvelUniverse/master/marvel-universe/Resources/Screenshots/img1.png" alt="Example Usage" width="280" height="497" />
+⬜️ <img src="https://raw.githubusercontent.com/siggb/MarvelUniverse/master/marvel-universe/Resources/Screenshots/img2.png" alt="Example Usage" width="280" height="497" />
+
 ### Methodologies & Frameworks
 
 * V.I.P.E.R.
