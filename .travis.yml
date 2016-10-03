@@ -1,5 +1,7 @@
 language: swift
 osx_image: xcode8.0
+before_install:
+  - gem install cocoapods --pre
 env:
   global:
   - LC_CTYPE=en_US.UTF-8

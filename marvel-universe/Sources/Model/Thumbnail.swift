@@ -11,11 +11,11 @@ import ObjectMapper
 class Thumbnail: Mappable {
     var path: String?
     var fileExtension: String?
-    var imageURL: NSURL? {
+    var imageURL: URL? {
         guard let fpath = self.path, let fextension = self.fileExtension else {
             return nil
         }
-        return NSURL(string: "\(fpath).\(fextension)")
+        return URL(string: "\(fpath).\(fextension)")
     }
     
     required init?(map: Map) { }

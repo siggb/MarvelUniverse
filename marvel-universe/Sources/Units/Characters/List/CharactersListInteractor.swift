@@ -8,6 +8,7 @@
 
 import UIKit
 import Moya
+import ObjectMapper
 
 class CharactersListInteractor: NSObject, CharactersListInteractorInput {
 
@@ -19,10 +20,19 @@ class CharactersListInteractor: NSObject, CharactersListInteractorInput {
             switch result {
             case let .success(response):
                 do {
-                    let items = try response.mapArray(Character.self)
-                    self?.presenter?.updateItems(items: items, error: nil)
+                    let json = try JSONSerialization.jsonObject(with: response.data, options: .allowFragments)
+                        as? [String: AnyObject]
+                    if let jsonData = json?["data"] {
+                        if let items = Mapper<Character>().mapArray(JSONObject: jsonData["results"]) {
+                            self?.presenter?.updateItems(items: items, error: nil)
+                        } else {
+                            //
+                        }
+                    } else {
+                        //
+                    }
                 } catch {
-                    self?.presenter?.updateItems(items: nil, error: NSError())
+                    //
                 }
             case let .failure(error):
                 self?.presenter?.updateItems(items: nil, error: error as NSError?)

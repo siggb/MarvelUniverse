@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CharactersListCell: UITableViewCell {
     
@@ -31,8 +32,10 @@ class CharactersListCell: UITableViewCell {
     }
     
     func configure(item: Character?) {
-        // FIXME: show correct data
-        characterImageView?.image = R.image.spiderMan()
-        characterLabel?.text = "Spider-Man"
+        if let imgURL = item?.thumbnail?.imageURL {
+            let imgResource = ImageResource(downloadURL: imgURL)
+            characterImageView?.kf.setImage(with: imgResource)
+        }
+        characterLabel?.text = item?.name
     }
 }
