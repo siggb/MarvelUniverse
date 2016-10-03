@@ -1,6 +1,9 @@
-### Marvel Universe
+# Marvel Universe
 
-Mobile iOS application for seekers of Marvel Universe.
+[![Build Status](https://travis-ci.org/siggb/MarvelUniverse.svg?branch=master)](https://travis-ci.org/siggb/MarvelUniverse?style=flat)
+[![Platform](https://img.shields.io/badge/platform-ios-yellow.svg)](https://img.shields.io/badge/platform-ios-yellow.svg?style=flat)
+
+Pure Swift iOS application for seekers of Marvel Universe.
 
 ### Methodologies & Frameworks
 
@@ -46,4 +49,4 @@ Please feel free to ask questions, open issues and submit pull requests.
 
 ## License
 
-SFProgressCircle is available under the MIT license. See the LICENSE file for more info.
+MarvelUniverse is available under the MIT license. See the LICENSE file for more info.
