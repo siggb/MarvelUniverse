@@ -13,7 +13,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="320" height="65"/>
+                <frame key="frameInset" width="320" height="65.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="irh-g2-U2K">
@@ -40,7 +40,7 @@
                     <constraint firstItem="r3G-KL-4k7" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="aIr-jx-GE8"/>
                     <constraint firstAttribute="bottom" secondItem="irh-g2-U2K" secondAttribute="bottom" id="bYr-bQ-Hp5"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="r3G-KL-4k7" secondAttribute="trailing" constant="16" id="iY5-uX-cSC"/>
-                    <constraint firstItem="irh-g2-U2K" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="sZO-Tl-bjS"/>
+                    <constraint firstItem="irh-g2-U2K" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="sZO-Tl-bjS"/>
                     <constraint firstItem="kBp-Av-vkB" firstAttribute="trailing" secondItem="irh-g2-U2K" secondAttribute="trailing" id="zr2-L3-Y0e"/>
                 </constraints>
             </tableViewCellContentView>

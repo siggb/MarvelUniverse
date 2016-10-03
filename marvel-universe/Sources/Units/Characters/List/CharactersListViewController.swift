@@ -11,22 +11,28 @@ import UIKit
 class CharactersListViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
+    var refreshControl = UIRefreshControl()
     var dataSource = CharactersListDataSource()
+    var presenter: CharactersListViewOutput?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         title = "All Characters"
-        
         tableView.delegate = self
         tableView.rowHeight = 66
         tableView.dataSource = dataSource
         dataSource.registerReusableViews(tableView: tableView)
+        refreshControl.addTarget(self, action: #selector(onPullToRefresh), for: .valueChanged)
+        tableView.addSubview(refreshControl)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
+        presenter?.loadContentIfNeeded(forced: false)
+    }
+    
+    func onPullToRefresh() {
+        presenter?.loadContentIfNeeded(forced: true)
     }
 }
 
@@ -45,17 +51,18 @@ extension CharactersListViewController: UITableViewDelegate {
     }
 }
 
-extension CharactersListViewController: CharactersListViewOutput {
+extension CharactersListViewController: CharactersListViewInput {
     
-    func refreshList() {
-        
+    func displayContent(_ items: [Character]) {
+        refreshControl.endRefreshing()
+        dataSource.items = items
+        tableView.reloadData()
     }
     
-    func loadWithPagination() {
-        
-    }
-    
-    func openDetail(item: Character) {
-        
+    func displayError(_ error: NSError) {
+        refreshControl.endRefreshing()
+        dataSource.items = nil
+        tableView.reloadData()
+        // TODO: show error
     }
 }

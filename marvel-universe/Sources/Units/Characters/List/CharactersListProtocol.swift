@@ -9,20 +9,20 @@
 import UIKit
 
 protocol CharactersListViewInput {
-    func updateList(items: [Character])
-    func displayError(error: NSError)
+    func displayContent(_ items: [Character])
+    func displayError(_ error: NSError)
 }
 
 protocol CharactersListViewOutput {
-    func refreshList()
-    func loadWithPagination()
-    func openDetail(item: Character) // -> in Router
+    func loadContentIfNeeded(forced: Bool)
+    // TODO: pagination
+    // TODO: open character info
 }
 
 protocol CharactersListInteractorInput {
-    func loadItems(offset: Int, limit: Int)
+    func loadItems()
 }
 
 protocol CharactersListInteractorOutput {
-    func updateItems(offset: Int, limit: Int)
+    func updateItems(items: [Character]?, error: NSError?)
 }

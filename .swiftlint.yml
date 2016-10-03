@@ -5,6 +5,8 @@ disabled_rules: # rule identifiers to exclude from running
   - opening_brace
   - variable_name
   - nesting
+  - todo
+  - fixme
   # - conditional_binding_cascade
   # - legacy_constructor
   # - legacy_cggeometry_functions
@@ -16,7 +18,6 @@ disabled_rules: # rule identifiers to exclude from running
   # - line_length
   # - operator_whitespace
   # - return_arrow_whitespace
-  # - todo
   # - type_body_length
   # - type_name
 opt_in_rules: # some rules are only opt-in

@@ -31,6 +31,7 @@ class CharactersListCell: UITableViewCell {
     }
     
     func configure(item: Character?) {
+        // FIXME: show correct data
         characterImageView?.image = R.image.spiderMan()
         characterLabel?.text = "Spider-Man"
     }

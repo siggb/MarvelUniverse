@@ -11,26 +11,20 @@ import Rswift
 
 class CharactersListDataSource: NSObject, UITableViewDataSource {
     
-    var items: [Character]? {
-        didSet {
-            // reload
-        }
-    }
+    var items: [Character]?
     
     func registerReusableViews(tableView: UITableView) {
         tableView.register(R.nib.charactersListCell)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // показывать заглушку когда нет элементов
-        return 15//items?.count ?? 0
+        return items?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.charactersListCell.identifier, for: indexPath)
         if let cell = cell as? CharactersListCell {
-            //cell.configure(item: items![indexPath.row])
-            cell.configure(item: nil)
+            cell.configure(item: items![indexPath.row])
         }
         return cell
     }

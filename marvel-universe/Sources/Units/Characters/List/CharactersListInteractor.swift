@@ -7,23 +7,26 @@
 //
 
 import UIKit
+import Moya
 
-class CharactersListInteractor: NSObject {
+class CharactersListInteractor: NSObject, CharactersListInteractorInput {
 
+    var presenter: CharactersListInteractorOutput?
+    var provider = CharactersProvider
+    
+    func loadItems() {
+        provider.request(.list) { [weak self] result in
+            switch result {
+            case let .success(response):
+                do {
+                    let items = try response.mapArray(Character.self)
+                    self?.presenter?.updateItems(items: items, error: nil)
+                } catch {
+                    self?.presenter?.updateItems(items: nil, error: NSError())
+                }
+            case let .failure(error):
+                self?.presenter?.updateItems(items: nil, error: error as NSError?)
+            }
+        }
+    }
 }
-
-//_ = CharactersProvider.request(.list) { result in
-//    switch result {
-//    case let .success(response):
-//        do {
-//            let items = try response.mapArray(Character.self)
-//            self.items = items
-//        } catch {
-//            print(error)
-//        }
-//        self.tableView?.reloadData()
-//    case let .failure(error):
-//        print(error)
-//        //error
-//    }
-//}
