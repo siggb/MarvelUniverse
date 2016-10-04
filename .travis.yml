@@ -15,6 +15,7 @@ before_install:
   - sudo rm -fr ~/.cocoapods/repos/master/
   - sudo rm -fr Pods/
 script:
+  - pod install
   - xcodebuild -version
   - xcodebuild -showsdks
   - xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$IOS_SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO clean build | xcpretty -c
