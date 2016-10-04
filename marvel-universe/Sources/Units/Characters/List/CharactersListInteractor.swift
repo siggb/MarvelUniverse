@@ -14,8 +14,8 @@ class CharactersListInteractor: CharactersListInteractorInput {
     
     weak var output: CharactersListInteractorOutput?
     
-    func loadItems() {
-        CharactersProvider.request(.list) { [weak self] result in
+    func loadItems(offset: Int, limit: Int) {
+        CharactersProvider.request(.list(offset, limit)) { [weak self] result in
             switch result {
             case let .success(response):
                 let mappingFailure = {

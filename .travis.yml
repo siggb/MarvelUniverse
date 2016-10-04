@@ -10,13 +10,10 @@ env:
   - DESTINATION="name=iPhone 7S,OS=10.0"
 before_install:
   - gem install activesupport -v 4.2.6
-  - gem install cocoapods -v '1.1.0.rc.2'
-  - gem install bundler
-install:
-  - bundle install ...
-  - pod repo remove master
-  - pod setup
-  - bundle exec pod install
+  - gem install cocoapods --pre
+  - sudo rm -fr ~/Library/Caches/CocoaPods/
+  - sudo rm -fr ~/.cocoapods/repos/master/
+  - sudo rm -fr Pods/
 script:
   - xcodebuild -version
   - xcodebuild -showsdks

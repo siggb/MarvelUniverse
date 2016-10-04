@@ -49,6 +49,13 @@ extension CharactersListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
     }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let redundant = tableView.contentSize.height - tableView.frame.size.height - tableView.contentInset.top
+        if scrollView.contentOffset.y > redundant {
+            output.loadNextBatch()
+        }
+    }
 }
 
 extension CharactersListViewController: CharactersListViewInput {
@@ -61,8 +68,8 @@ extension CharactersListViewController: CharactersListViewInput {
         refreshControl.endRefreshing()
     }
     
-    func displayContent(_ items: [Character]) {
-        dataSource.items = items
+    func displayContent(_ items: [Character], batched: Bool) {
+        dataSource.items = output.prepareContent(batched: batched, origin: dataSource.items, items: items)
         tableView.reloadData()
     }
     

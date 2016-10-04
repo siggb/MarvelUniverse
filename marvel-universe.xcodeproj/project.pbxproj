@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0B2C9EE11DA3DCFB0004D69A /* CharactersListContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2C9EE01DA3DCFB0004D69A /* CharactersListContainer.swift */; };
 		0B2C9EE71DA3FE2A0004D69A /* LoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2C9EE61DA3FE2A0004D69A /* LoggerPlugin.swift */; };
-		0B3CF96C1DA00CF600DE26D9 /* Moya+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3CF96B1DA00CF600DE26D9 /* Moya+ObjectMapper.swift */; };
 		0B4086D91DA0166800A862C4 /* CharactersAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4086D81DA0166800A862C4 /* CharactersAPI.swift */; };
 		0B6DEB721D9FF16100072147 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6DEB711D9FF16100072147 /* Constants.swift */; };
 		0B7E09041D9FD6D00080FB56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B7E08EF1D9FD6D00080FB56 /* Assets.xcassets */; };
@@ -46,7 +45,6 @@
 /* Begin PBXFileReference section */
 		0B2C9EE01DA3DCFB0004D69A /* CharactersListContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersListContainer.swift; sourceTree = "<group>"; };
 		0B2C9EE61DA3FE2A0004D69A /* LoggerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerPlugin.swift; sourceTree = "<group>"; };
-		0B3CF96B1DA00CF600DE26D9 /* Moya+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Moya+ObjectMapper.swift"; sourceTree = "<group>"; };
 		0B4086D81DA0166800A862C4 /* CharactersAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersAPI.swift; sourceTree = "<group>"; };
 		0B6DEB711D9FF16100072147 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0B7E08EF1D9FD6D00080FB56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -139,7 +137,6 @@
 		0B7E08FB1D9FD6D00080FB56 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0B3CF96B1DA00CF600DE26D9 /* Moya+ObjectMapper.swift */,
 				0B922AE81DA033920063C404 /* Character.swift */,
 				0B922AEA1DA03CC20063C404 /* Comic.swift */,
 				0B922AEC1DA03D740063C404 /* Story.swift */,
@@ -153,8 +150,8 @@
 		0B7E08FD1D9FD6D00080FB56 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				0B6DEB711D9FF16100072147 /* Constants.swift */,
 				0B4086D81DA0166800A862C4 /* CharactersAPI.swift */,
+				0B6DEB711D9FF16100072147 /* Constants.swift */,
 				0B2C9EE61DA3FE2A0004D69A /* LoggerPlugin.swift */,
 			);
 			path = Network;
@@ -455,7 +452,6 @@
 				0BA25B991DA19CFA007C4A3A /* CharactersListProtocol.swift in Sources */,
 				0BA25B9D1DA19D1D007C4A3A /* CharactersListInteractor.swift in Sources */,
 				0B2C9EE71DA3FE2A0004D69A /* LoggerPlugin.swift in Sources */,
-				0B3CF96C1DA00CF600DE26D9 /* Moya+ObjectMapper.swift in Sources */,
 				0BC4BECE1DA3AB9A0099F2AC /* CharactersListRouter.swift in Sources */,
 				0B922AF31DA0428B0063C404 /* Thumbnail.swift in Sources */,
 				0BA25BA01DA19D30007C4A3A /* CharactersListViewController.swift in Sources */,

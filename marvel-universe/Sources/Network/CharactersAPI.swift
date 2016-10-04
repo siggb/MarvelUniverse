@@ -12,7 +12,7 @@ import Moya
 let CharactersProvider = MoyaProvider<MarvelCharacters>(plugins: [LoggerPlugin.jsonPlugin])
 
 enum MarvelCharacters {
-    case list
+    case list(Int, Int)
     case characterInfo(Int)
     case characterComics(Int)
     case characterEvents(Int)
@@ -47,7 +47,16 @@ extension MarvelCharacters: TargetType {
     }
     
     var parameters: [String: Any]? {
-        return ["ts": ApiCreditionals.timestamp, "apikey": ApiCreditionals.publicKey, "hash": ApiCreditionals.hash]
+        var dict = ["ts": ApiCreditionals.timestamp, "apikey": ApiCreditionals.publicKey, "hash": ApiCreditionals.hash]
+        switch self {
+        case .list(let offset, let limit):
+            dict["orderBy"] = "name"
+            dict["offset"] = String(offset)
+            dict["limit"] = String(limit)
+        default:
+            break
+        }
+        return dict
     }
     var sampleData: Data {
         return "sample".data(using: String.Encoding.utf8)!

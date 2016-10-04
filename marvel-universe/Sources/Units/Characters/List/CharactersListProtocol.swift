@@ -11,17 +11,19 @@ import UIKit
 protocol CharactersListViewInput: class {
     func showLoadingIndicator()
     func hideLoadingIndicator()
-    func displayContent(_ items: [Character])
+    func displayContent(_ items: [Character], batched: Bool)
     func displayError(_ error: NSError)
 }
 
 protocol CharactersListViewOutput {
     func loadContentIfNeeded(forced: Bool)
+    func loadNextBatch()
+    func prepareContent(batched: Bool, origin: [Character]?, items: [Character]) -> [Character]
     func showCharacterDetail(characterId: Int)
 }
 
 protocol CharactersListInteractorInput {
-    func loadItems()
+    func loadItems(offset: Int, limit: Int)
 }
 
 protocol CharactersListInteractorOutput: class {
