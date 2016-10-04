@@ -12,13 +12,16 @@ import ObjectMapper
 
 class CharactersListInteractor: CharactersListInteractorInput {
     
-    var provider = CharactersProvider
     weak var output: CharactersListInteractorOutput?
     
     func loadItems() {
-        provider.request(.list) { [weak self] result in
+        CharactersProvider.request(.list) { [weak self] result in
             switch result {
             case let .success(response):
+                let mappingFailure = {
+                    let error = NSError(domain: "Error recieved during mapping process", code: 401, userInfo: nil)
+                    self?.output?.updateItems(items: nil, error: error)
+                }
                 do {
                     let json = try JSONSerialization.jsonObject(with: response.data, options: .allowFragments)
                         as? [String: AnyObject]
@@ -26,16 +29,16 @@ class CharactersListInteractor: CharactersListInteractorInput {
                         if let items = Mapper<Character>().mapArray(JSONObject: jsonData["results"]) {
                             self?.output?.updateItems(items: items, error: nil)
                         } else {
-                            //
+                            mappingFailure()
                         }
                     } else {
-                        //
+                        mappingFailure()
                     }
                 } catch {
-                    //
+                    mappingFailure()
                 }
             case let .failure(error):
-                self?.output?.updateItems(items: nil, error: error as NSError?)
+                self?.output?.updateItems(items: nil, error: error as NSError)
             }
         }
     }

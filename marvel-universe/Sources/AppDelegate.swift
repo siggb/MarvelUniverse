@@ -14,14 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var navigationController: UINavigationController?
+    lazy var assembler: Assembler? = {
+        return try? Assembler(assemblies: [CharactersListContainer()])
+    }()
 
     func application(
         _ application: UIApplication, didFinishLaunchingWithOptions
-        launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        var assembler: Assembler?
-        do {
-            assembler = try Assembler(assemblies: [CharactersListContainer()])
-        } catch { }
+        launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
+    {
         let rootVC = assembler?.resolver.resolve(CharactersListViewInput.self) as? CharactersListViewController
         navigationController = UINavigationController(rootViewController: rootVC!)
         window = UIWindow(frame: UIScreen.main.bounds)
