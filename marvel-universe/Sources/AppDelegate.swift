@@ -18,15 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(
         _ application: UIApplication, didFinishLaunchingWithOptions
         launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let interactor = CharactersListInteractor()
-        let presenter = CharactersListPresenter()
-        let view = CharactersListViewController()
-        view.presenter = presenter
-        presenter.view = view
-        interactor.presenter = presenter
-        presenter.interactor = interactor
-        
-        navigationController = UINavigationController(rootViewController: view)
+        var assembler: Assembler?
+        do {
+            assembler = try Assembler(assemblies: [CharactersListContainer()])
+        } catch { }
+        let rootVC = assembler?.resolver.resolve(CharactersListViewInput.self) as? CharactersListViewController
+        navigationController = UINavigationController(rootViewController: rootVC!)
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

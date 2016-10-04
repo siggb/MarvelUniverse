@@ -10,10 +10,10 @@ import UIKit
 import Moya
 import ObjectMapper
 
-class CharactersListInteractor: NSObject, CharactersListInteractorInput {
-
-    var presenter: CharactersListInteractorOutput?
+class CharactersListInteractor: CharactersListInteractorInput {
+    
     var provider = CharactersProvider
+    weak var output: CharactersListInteractorOutput?
     
     func loadItems() {
         provider.request(.list) { [weak self] result in
@@ -24,7 +24,7 @@ class CharactersListInteractor: NSObject, CharactersListInteractorInput {
                         as? [String: AnyObject]
                     if let jsonData = json?["data"] {
                         if let items = Mapper<Character>().mapArray(JSONObject: jsonData["results"]) {
-                            self?.presenter?.updateItems(items: items, error: nil)
+                            self?.output?.updateItems(items: items, error: nil)
                         } else {
                             //
                         }
@@ -35,7 +35,7 @@ class CharactersListInteractor: NSObject, CharactersListInteractorInput {
                     //
                 }
             case let .failure(error):
-                self?.presenter?.updateItems(items: nil, error: error as NSError?)
+                self?.output?.updateItems(items: nil, error: error as NSError?)
             }
         }
     }

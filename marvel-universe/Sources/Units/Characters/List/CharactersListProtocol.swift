@@ -8,21 +8,26 @@
 
 import UIKit
 
-protocol CharactersListViewInput {
+protocol CharactersListViewInput: class {
+    func showLoadingIndicator()
+    func hideLoadingIndicator()
     func displayContent(_ items: [Character])
     func displayError(_ error: NSError)
 }
 
 protocol CharactersListViewOutput {
     func loadContentIfNeeded(forced: Bool)
-    // TODO: pagination
-    // TODO: open character info
+    func showCharacterDetail(characterId: Int)
 }
 
 protocol CharactersListInteractorInput {
     func loadItems()
 }
 
-protocol CharactersListInteractorOutput {
+protocol CharactersListInteractorOutput: class {
     func updateItems(items: [Character]?, error: NSError?)
+}
+
+protocol CharactersListRouterInput {
+    func showCharacterDetail(characterId: Int)
 }

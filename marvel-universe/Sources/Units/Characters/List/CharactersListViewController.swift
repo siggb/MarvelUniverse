@@ -13,7 +13,7 @@ class CharactersListViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     var refreshControl = UIRefreshControl()
     var dataSource = CharactersListDataSource()
-    var presenter: CharactersListViewOutput?
+    var output: CharactersListViewOutput!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +28,11 @@ class CharactersListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter?.loadContentIfNeeded(forced: false)
+        output.loadContentIfNeeded(forced: false)
     }
     
     func onPullToRefresh() {
-        presenter?.loadContentIfNeeded(forced: true)
+        output.loadContentIfNeeded(forced: true)
     }
 }
 
@@ -53,14 +53,20 @@ extension CharactersListViewController: UITableViewDelegate {
 
 extension CharactersListViewController: CharactersListViewInput {
     
-    func displayContent(_ items: [Character]) {
+    func showLoadingIndicator() {
+        refreshControl.beginRefreshing()
+    }
+    
+    func hideLoadingIndicator() {
         refreshControl.endRefreshing()
+    }
+    
+    func displayContent(_ items: [Character]) {
         dataSource.items = items
         tableView.reloadData()
     }
     
     func displayError(_ error: NSError) {
-        refreshControl.endRefreshing()
         dataSource.items = nil
         tableView.reloadData()
         // TODO: show error

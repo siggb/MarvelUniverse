@@ -8,21 +8,28 @@
 
 import UIKit
 
-class CharactersListPresenter: NSObject, CharactersListViewOutput, CharactersListInteractorOutput {
+class CharactersListPresenter: CharactersListViewOutput, CharactersListInteractorOutput {
     
-    var interactor: CharactersListInteractorInput?
-    var view: CharactersListViewInput?
+    weak var view: CharactersListViewInput?
+    var interactor: CharactersListInteractorInput!
+    var router: CharactersListRouterInput!
     
     // MARK: - CharactersListViewOutput
     
     func loadContentIfNeeded(forced: Bool) {
         // TODO: check forced case
-        interactor?.loadItems()
+        view?.showLoadingIndicator()
+        interactor.loadItems()
+    }
+    
+    func showCharacterDetail(characterId: Int) {
+        router.showCharacterDetail(characterId: characterId)
     }
     
     // MARK: - CharactersListInteractorOutput
     
     func updateItems(items: [Character]?, error: NSError?) {
+        view?.hideLoadingIndicator()
         if let error = error {
             view?.displayError(error)
         } else if let items = items {
