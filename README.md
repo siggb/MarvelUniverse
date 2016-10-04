@@ -6,7 +6,7 @@
 Pure Swift iOS application for seekers of Marvel Universe.
 
 <img src="https://raw.githubusercontent.com/siggb/MarvelUniverse/master/marvel-universe/Resources/Screenshots/img1.png" alt="Example Usage" width="280" height="497" />
-⬜️ <img src="https://raw.githubusercontent.com/siggb/MarvelUniverse/master/marvel-universe/Resources/Screenshots/img2.png" alt="Example Usage" width="280" height="497" />
+▷▷<img src="https://raw.githubusercontent.com/siggb/MarvelUniverse/master/marvel-universe/Resources/Screenshots/img2.png" alt="Example Usage" width="280" height="497" />
 
 ### Methodologies & Frameworks
 
@@ -28,7 +28,8 @@ Pure Swift iOS application for seekers of Marvel Universe.
 
 ## Requirements
 
-- iOS 10.0+
+- Swift 3.0
+- iOS SDK 10.0+
 - Xcode 8.0+
 
 ## Installation via CocoaPods

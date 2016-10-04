@@ -11,8 +11,11 @@ env:
   - SCHEME="marvel-universe"
   - IOS_SDK=iphonesimulator10.0
   - DESTINATION="name=iPhone 7S,OS=10.0"
-script:
-  - pod install
+before_script:
+  - pod --version
   - xcodebuild -version
   - xcodebuild -showsdks
+script:
+  - pod setup
+  - pod install
   - xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$IOS_SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO clean build | xcpretty -c
