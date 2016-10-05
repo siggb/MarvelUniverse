@@ -14,8 +14,12 @@ before_install:
   - sudo rm -fr ~/Library/Caches/CocoaPods/
   - sudo rm -fr ~/.cocoapods/repos/master/
   - sudo rm -fr Pods/
+install:
+  - gem install bundler
+  - bundle install --jobs=3 --retry=3 --deployment --without distribution
+  - pod setup
+  - bundle exec pod install
 script:
-  - pod install
   - xcodebuild -version
   - xcodebuild -showsdks
   - xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$IOS_SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO clean build | xcpretty -c
