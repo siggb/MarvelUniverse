@@ -9,16 +9,17 @@ env:
   - IOS_SDK=iphonesimulator10.0
   - DESTINATION="name=iPhone 7S,OS=10.0"
 before_install:
-  - gem install activesupport -v 4.2.6
-  - gem install cocoapods --pre
+  - sudo gem update --system
+  - sudo gem install activesupport -v 4.2.6
+  - sudo gem install cocoapods --pre
   - sudo rm -fr ~/Library/Caches/CocoaPods/
   - sudo rm -fr ~/.cocoapods/repos/master/
   - sudo rm -fr Pods/
 install:
-  - gem install bundler
-  - bundle install --jobs=3 --retry=3 --deployment --without distribution
-  - pod setup
-  - bundle exec pod install
+  - pwd
+  - ls -la
+  - pod setup --verbose
+  - pod install --verbose
 script:
   - xcodebuild -version
   - xcodebuild -showsdks

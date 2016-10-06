@@ -76,6 +76,5 @@ extension CharactersListViewController: CharactersListViewInput {
     func displayError(_ error: NSError) {
         dataSource.items = nil
         tableView.reloadData()
-        // TODO: show error
     }
 }
