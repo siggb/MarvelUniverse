@@ -15,9 +15,13 @@ class CharactersListViewController: UIViewController {
     var dataSource = CharactersListDataSource()
     var output: CharactersListViewOutput!
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "All Characters"
+        title = "Marvel Universe"
         tableView.delegate = self
         tableView.rowHeight = 66
         tableView.dataSource = dataSource
@@ -28,6 +32,7 @@ class CharactersListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
         output.loadContentIfNeeded(forced: false)
     }
     
@@ -47,11 +52,14 @@ extension CharactersListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
+        defer {
+            tableView.deselectRow(at: indexPath, animated: false)
+        }
+        output.showCharacterDetail(character: dataSource.items?[indexPath.row])
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let redundant = tableView.contentSize.height - tableView.frame.size.height - tableView.contentInset.top
+        let redundant = tableView.contentSize.height - tableView.frame.size.height - 64
         if scrollView.contentOffset.y > redundant {
             output.loadNextBatch()
         }

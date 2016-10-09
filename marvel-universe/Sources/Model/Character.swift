@@ -29,7 +29,6 @@ class Character: Mappable {
         modified <- map["modified"]
         resourceURI <- map["resourceURI"]
         thumbnail <- map["thumbnail"]
-        resourceURI <- map["resourceURI"]
         comics <- map["comics.items"]
         stories <- map["stories.items"]
         events <- map["events.items"]

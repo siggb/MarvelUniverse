@@ -1,12 +1,14 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharacterDetailViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharacterDetailViewController" customModule="marvel_universe" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="YJV-Ip-krl" id="0ad-ou-1Cd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +16,40 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YJV-Ip-krl">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goz-ny-WEa">
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="BDD-rJ-6m8"/>
+                        <constraint firstAttribute="height" constant="64" id="P7c-xP-CQc"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" image="arrowBack"/>
+                    <state key="highlighted" image="arrowBackSel"/>
+                    <connections>
+                        <action selector="onBack" destination="-1" eventType="touchUpInside" id="aay-8g-f47"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="goz-ny-WEa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="LHc-UI-512"/>
+                <constraint firstAttribute="bottom" secondItem="YJV-Ip-krl" secondAttribute="bottom" id="U7k-3R-he8"/>
+                <constraint firstItem="goz-ny-WEa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bGW-SR-5rx"/>
+                <constraint firstItem="YJV-Ip-krl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fOv-gB-8iB"/>
+                <constraint firstAttribute="trailing" secondItem="YJV-Ip-krl" secondAttribute="trailing" id="j0s-WI-zYg"/>
+                <constraint firstItem="YJV-Ip-krl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="tpp-MB-RTm"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <point key="canvasLocation" x="24.5" y="51.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="arrowBack" width="22" height="11"/>
+        <image name="arrowBackSel" width="22" height="11"/>
+    </resources>
 </document>

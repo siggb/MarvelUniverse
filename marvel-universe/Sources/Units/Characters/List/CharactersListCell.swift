@@ -17,7 +17,6 @@ class CharactersListCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        selectionStyle = .none
         characterLabel?.font = R.font.tradeGothicLTStdBd2(size: 16)
     }
     
@@ -32,7 +31,7 @@ class CharactersListCell: UITableViewCell {
     }
     
     func configure(item: Character?) {
-        if let imgURL = item?.thumbnail?.imageURL {
+        if let imgURL = item?.thumbnail?.smallImageURL {
             let imgResource = ImageResource(downloadURL: imgURL)
             characterImageView?.kf.setImage(with: imgResource)
         }

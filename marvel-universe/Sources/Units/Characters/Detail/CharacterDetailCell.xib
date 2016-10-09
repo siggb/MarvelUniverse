@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CharacterDetailCellId" rowHeight="94" id="KGk-i7-Jjw" customClass="CharacterDetailCell" customModule="marvel_universe" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="94"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="93"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Idz-SP-TPi">
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CWw-wL-1gR">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czd-LT-YaI">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="czd-LT-YaI" secondAttribute="bottom" id="8Ir-M2-hM5"/>
+                            <constraint firstItem="czd-LT-YaI" firstAttribute="leading" secondItem="Idz-SP-TPi" secondAttribute="leading" constant="40" id="IeQ-Wh-NKG"/>
+                            <constraint firstItem="CWw-wL-1gR" firstAttribute="top" secondItem="czd-LT-YaI" secondAttribute="top" constant="-2" id="KHZ-td-qin"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="czd-LT-YaI" secondAttribute="trailing" constant="16" id="WZ5-YZ-Lnf"/>
+                            <constraint firstItem="czd-LT-YaI" firstAttribute="top" secondItem="Idz-SP-TPi" secondAttribute="top" constant="2" id="X61-uM-2BE"/>
+                            <constraint firstItem="CWw-wL-1gR" firstAttribute="leading" secondItem="czd-LT-YaI" secondAttribute="leading" constant="-14" id="apn-Ef-9UG"/>
+                            <constraint firstItem="CWw-wL-1gR" firstAttribute="bottom" secondItem="czd-LT-YaI" secondAttribute="bottom" id="ngI-xj-ZaP"/>
+                            <constraint firstAttribute="height" constant="26" id="pjn-hf-Fol"/>
+                            <constraint firstItem="CWw-wL-1gR" firstAttribute="trailing" secondItem="czd-LT-YaI" secondAttribute="trailing" constant="14" id="whF-md-RHG"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TeR-4a-VR1">
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Idz-SP-TPi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="PXc-Kl-ZiE"/>
+                    <constraint firstAttribute="trailing" secondItem="Idz-SP-TPi" secondAttribute="trailing" id="VuR-Dh-BbK"/>
+                    <constraint firstAttribute="bottom" secondItem="TeR-4a-VR1" secondAttribute="bottom" constant="20" id="ZrK-xy-QJA"/>
+                    <constraint firstItem="TeR-4a-VR1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="gBC-Sd-aHi"/>
+                    <constraint firstItem="TeR-4a-VR1" firstAttribute="top" secondItem="Idz-SP-TPi" secondAttribute="bottom" constant="10" id="mYa-NR-7zd"/>
+                    <constraint firstItem="Idz-SP-TPi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="nuz-IO-LCD"/>
+                    <constraint firstAttribute="trailing" secondItem="TeR-4a-VR1" secondAttribute="trailing" constant="16" id="ui3-x0-G3a"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="descriptionLabel" destination="TeR-4a-VR1" id="dlq-wA-5iF"/>
+                <outlet property="sectionImageView" destination="CWw-wL-1gR" id="1hj-nq-kuJ"/>
+                <outlet property="titleLabel" destination="czd-LT-YaI" id="Ze9-a4-CNE"/>
+            </connections>
+            <point key="canvasLocation" x="-210" y="-57"/>
+        </tableViewCell>
+    </objects>
+</document>

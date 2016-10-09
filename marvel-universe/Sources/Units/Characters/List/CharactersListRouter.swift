@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import Swinject
 
 class CharactersListRouter: CharactersListRouterInput {
     
-    func showCharacterDetail(characterId: Int) {
+    func showCharacterDetail(character: Character) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
-        appDelegate.navigationController?.pushViewController(CharacterDetailViewController(), animated: true)
+        let detailVC = appDelegate.assembler?.resolver.resolve(CharacterDetailViewInput.self, argument: character)
+            as? CharacterDetailViewController
+        appDelegate.navigationController?.pushViewController(detailVC!, animated: true)
     }
 }

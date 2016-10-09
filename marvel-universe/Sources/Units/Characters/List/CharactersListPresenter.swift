@@ -59,8 +59,10 @@ class CharactersListPresenter: CharactersListViewOutput, CharactersListInteracto
         return [origin, items].flatMap{ $0 }
     }
     
-    func showCharacterDetail(characterId: Int) {
-        router.showCharacterDetail(characterId: characterId)
+    func showCharacterDetail(character: Character?) {
+        if let character = character {
+            router.showCharacterDetail(character: character)
+        }
     }
     
     // MARK: - CharactersListInteractorOutput

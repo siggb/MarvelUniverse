@@ -1,5 +1,5 @@
 //
-//  CharactersListProtocol.swift
+//  CharactersListProtocols.swift
 //  marvel-universe
 //
 //  Created by Sibagatov Ildar on 10/2/16.
@@ -19,7 +19,7 @@ protocol CharactersListViewOutput {
     func loadContentIfNeeded(forced: Bool)
     func loadNextBatch()
     func prepareContent(batched: Bool, origin: [Character]?, items: [Character]) -> [Character]
-    func showCharacterDetail(characterId: Int)
+    func showCharacterDetail(character: Character?)
 }
 
 protocol CharactersListInteractorInput {
@@ -31,5 +31,5 @@ protocol CharactersListInteractorOutput: class {
 }
 
 protocol CharactersListRouterInput {
-    func showCharacterDetail(characterId: Int)
+    func showCharacterDetail(character: Character)
 }

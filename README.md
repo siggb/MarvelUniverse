@@ -1,12 +1,14 @@
 # Marvel Universe
 
-[![Build Status](https://travis-ci.org/siggb/MarvelUniverse.svg?branch=master)](https://travis-ci.org/siggb/MarvelUniverse?style=flat)
-[![Platform](https://img.shields.io/badge/platform-ios-yellow.svg)](https://img.shields.io/badge/platform-ios-yellow.svg?style=flat)
+[![Build Status](https://travis-ci.org/siggb/MarvelUniverse.svg?branch=master,style=flat)](https://travis-ci.org/siggb/MarvelUniverse)
+[![Platform](https://img.shields.io/badge/platform-ios-blue.svg?style=flat)](https://developer.apple.com/ios/human-interface-guidelines/)
+[![Swift Version](https://img.shields.io/badge/swift-3.0-yellow.svg?style=flat)](https://swift.org)
+[![License](https://img.shields.io/badge/license-MIT-red.svg?style=flat)](https://github.com/siggb/MarvelUniverse/blob/master/LICENSE)
 
 Pure Swift iOS application for seekers of Marvel Universe.
 
-<img src="https://raw.githubusercontent.com/siggb/MarvelUniverse/master/marvel-universe/Resources/Screenshots/img1.png" alt="Example Usage" width="280" height="497" />
-▷▷<img src="https://raw.githubusercontent.com/siggb/MarvelUniverse/master/marvel-universe/Resources/Screenshots/img2.png" alt="Example Usage" width="280" height="497" />
+<img src="https://raw.githubusercontent.com/siggb/MarvelUniverse/master/marvel-universe/Resources/Screenshots/img1.png" alt="Screen-1" width="280" height="497" />
+▷▷<img src="https://raw.githubusercontent.com/siggb/MarvelUniverse/master/marvel-universe/Resources/Screenshots/img2.png" alt="Screen-2" width="280" height="497" />
 
 ### Methodologies & Frameworks
 

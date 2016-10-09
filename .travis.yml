@@ -18,6 +18,7 @@ before_install:
 install:
   - pwd
   - ls -la
+  - pod --version
   - pod setup --verbose
   - pod install --verbose
 script:

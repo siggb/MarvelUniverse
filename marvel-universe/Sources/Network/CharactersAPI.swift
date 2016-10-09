@@ -30,15 +30,15 @@ extension MarvelCharacters: TargetType {
         case .list:
             return ApiEndpoints.characters
         case .characterInfo(let id):
-            return String(format: ApiEndpoints.characterInfo, id)
+            return String(format: ApiEndpoints.characterInfo, String(id))
         case .characterComics(let id):
-            return String(format: ApiEndpoints.characterComics, id)
+            return String(format: ApiEndpoints.characterComics, String(id))
         case .characterEvents(let id):
-            return String(format: ApiEndpoints.characterEvents, id)
+            return String(format: ApiEndpoints.characterEvents, String(id))
         case .characterSeries(let id):
-            return String(format: ApiEndpoints.characterSeries, id)
+            return String(format: ApiEndpoints.characterSeries, String(id))
         case .characterStories(let id):
-            return String(format: ApiEndpoints.characterStories, id)
+            return String(format: ApiEndpoints.characterStories, String(id))
         }
     }
     

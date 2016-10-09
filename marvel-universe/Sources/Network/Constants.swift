@@ -21,9 +21,9 @@ struct ApiCreditionals {
 struct ApiEndpoints {
     static let path = "/v1/public/"
     static let characters = "characters"
-    static let characterInfo = "character/%@"
-    static let characterComics = "character/%@/comics"
-    static let characterEvents = "character/%@/events"
-    static let characterSeries = "character/%@/series"
-    static let characterStories = "character/%@/stories"
+    static let characterInfo = "characters/%@"
+    static let characterComics = "characters/%@/comics"
+    static let characterEvents = "characters/%@/events"
+    static let characterSeries = "characters/%@/series"
+    static let characterStories = "characters/%@/stories"
 }

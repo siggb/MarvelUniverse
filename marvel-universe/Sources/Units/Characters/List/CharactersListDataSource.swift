@@ -28,5 +28,4 @@ class CharactersListDataSource: NSObject, UITableViewDataSource {
         }
         return cell
     }
-
 }
