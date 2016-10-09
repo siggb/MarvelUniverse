@@ -24,9 +24,8 @@ Pure Swift iOS application for seekers of Marvel Universe.
 
 ## TODO
 
-- [ ] Comics List
-- [ ] Stories List
-- [ ] Add character background photo
+- [ ] Find out the ways to get more info about characters (real name, abilities, etc.)
+- [ ] Display Comics and Stories sections on the detail page
 
 ## Requirements
 
