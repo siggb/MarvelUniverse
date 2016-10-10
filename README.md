@@ -14,6 +14,7 @@ Pure Swift iOS application for seekers of Marvel Universe.
 
 * V.I.P.E.R.
 * Dependency Injection via Swinject
+* Code analysing via SwiftLint
 * Alamofire
 * Moya
 * ObjectMapper
@@ -24,6 +25,9 @@ Pure Swift iOS application for seekers of Marvel Universe.
 
 ## TODO
 
+- [x] Implement detail page to display additional character information
+- [ ] Searching by name characters feature
+- [ ] Possibility to save characters into Favorites by using local storage (SwiftRealm)
 - [ ] Find out the ways to get more info about characters (real name, abilities, etc.)
 - [ ] Display Comics and Stories sections on the detail page
 
