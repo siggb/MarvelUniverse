@@ -27,9 +27,12 @@ Pure Swift iOS application for seekers of Marvel Universe.
 
 - [x] Implement detail page to display additional character information
 - [ ] Searching by name characters feature
-- [ ] Possibility to save characters into Favorites by using local storage (SwiftRealm)
+- [ ] Possibility to save characters into Favorites by using local storage (SwiftRealm/CoreData)
 - [ ] Find out the ways to get more info about characters (real name, abilities, etc.)
 - [ ] Display Comics and Stories sections on the detail page
+- [ ] Start using Service Oriented Architecture (SOA)
+- [ ] Implement JSON-scheme validation before mapping
+- [ ] Write unit tests
 
 ## Requirements
 
