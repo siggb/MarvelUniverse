@@ -26,7 +26,7 @@ class CharacterDetailInteractor: CharacterDetailInteractorInput {
                     let json = try JSONSerialization.jsonObject(with: response.data, options: .allowFragments)
                         as? [String: AnyObject]
                     if let jsonData = json?["data"] {
-                        if let items = Mapper<Character>().mapArray(JSONObject: jsonData["results"]),
+                        if let items = Mapper<Character>().mapArray(JSONObject: jsonData["results"]!),
                             let item = items.first {
                             self?.output?.updateInfo(item: item, error: nil)
                         } else {

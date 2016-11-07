@@ -26,7 +26,7 @@ class CharactersListInteractor: CharactersListInteractorInput {
                     let json = try JSONSerialization.jsonObject(with: response.data, options: .allowFragments)
                         as? [String: AnyObject]
                     if let jsonData = json?["data"] {
-                        if let items = Mapper<Character>().mapArray(JSONObject: jsonData["results"]) {
+                        if let items = Mapper<Character>().mapArray(JSONObject: jsonData["results"]!) {
                             self?.output?.updateItems(items: items, error: nil)
                         } else {
                             mappingFailure()
